@@ -10,8 +10,8 @@ export const data = [
   {
     id: '1',
     coordinate: {
-      latitude: 22.6293867,
-      longitude: 88.4354486,
+      latitude: 46.762805,
+      longitude: 23.574303,
     },
     title: 'Amazing Food Place',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est metus, gravida vel ex volutpat, posuere euismod tortor. Pellentesque tincidunt, mi ac varius blandit, quam orci dignissim risus, vitae rutrum orci urna ut neque.
@@ -25,8 +25,8 @@ export const data = [
   {
     id: '2',
     coordinate: {
-      latitude: 22.6345648,
-      longitude: 88.4377279,
+      latitude: 46.778318,
+      longitude: 23.609913,
     },
     title: 'Second Amazing Food Place',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est metus, gravida vel ex volutpat, posuere euismod tortor. Pellentesque tincidunt, mi ac varius blandit, quam orci dignissim risus, vitae rutrum orci urna ut neque.
@@ -40,8 +40,8 @@ export const data = [
   {
     id: '3',
     coordinate: {
-      latitude: 22.6281662,
-      longitude: 88.4410113,
+      latitude: 46.772306,
+      longitude: 23.581058,
     },
     title: 'Third Amazing Food Place',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est metus, gravida vel ex volutpat, posuere euismod tortor. Pellentesque tincidunt, mi ac varius blandit, quam orci dignissim risus, vitae rutrum orci urna ut neque.
@@ -55,8 +55,8 @@ export const data = [
   {
     id: '4',
     coordinate: {
-      latitude: 22.6341137,
-      longitude: 88.4497463,
+      latitude: 46.766346,
+      longitude: 23.591239,
     },
     title: 'Fourth Amazing Food Place',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est metus, gravida vel ex volutpat, posuere euismod tortor. Pellentesque tincidunt, mi ac varius blandit, quam orci dignissim risus, vitae rutrum orci urna ut neque.
@@ -70,8 +70,8 @@ export const data = [
   {
     id: '5',
     coordinate: {
-      latitude: 22.6292757,
-      longitude: 88.444781,
+      latitude: 46.763532,
+      longitude: 23.569983,
     },
     title: 'Fifth Amazing Food Place',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est metus, gravida vel ex volutpat, posuere euismod tortor. Pellentesque tincidunt, mi ac varius blandit, quam orci dignissim risus, vitae rutrum orci urna ut neque.
@@ -85,8 +85,8 @@ export const data = [
   {
     id: '6',
     coordinate: {
-      latitude: 22.6293867,
-      longitude: 88.4354486,
+      latitude: 46.762805,
+      longitude: 23.574303,
     },
     title: 'Amazing Food Place',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est metus, gravida vel ex volutpat, posuere euismod tortor. Pellentesque tincidunt, mi ac varius blandit, quam orci dignissim risus, vitae rutrum orci urna ut neque.
@@ -100,8 +100,8 @@ export const data = [
   {
     id: '7',
     coordinate: {
-      latitude: 22.6345648,
-      longitude: 88.4377279,
+      latitude: 46.778318,
+      longitude: 23.609913,
     },
     title: 'Second Amazing Food Place',
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque est metus, gravida vel ex volutpat, posuere euismod tortor. Pellentesque tincidunt, mi ac varius blandit, quam orci dignissim risus, vitae rutrum orci urna ut neque.

@@ -84,7 +84,7 @@ const CardItemDetails = ({route}) => {
             }}>
             <MapView.Marker
               coordinate={itemData.coordinate}
-              image={require('../assets/map_marker.png')}
+              image={require('../assets/yotti/Asset1.png')}
             />
           </MapView>
         </View>

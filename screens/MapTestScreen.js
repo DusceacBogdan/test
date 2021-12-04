@@ -221,7 +221,7 @@ const MapTestScreen = () => {
                     latitude: 37.78825,
                     longitude: -122.4324,
                 }}
-                image={require("../assets/SVG/Asset4.svg")}
+                image={require("../assets/yotti/Asset1.png")}
                 title="Test Title"
                 description="This is the test description"
             >

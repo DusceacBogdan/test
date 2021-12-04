@@ -55,8 +55,8 @@ const ExploreScreen = () => {
       },
   ],
     region: {
-      latitude: 22.62938671242907,
-      longitude: 88.4354486029795,
+      latitude: 46.769327,
+      longitude: 23.588669,
       latitudeDelta: 0.04864195044303443,
       longitudeDelta: 0.040142817690068,
     },
@@ -147,7 +147,7 @@ const ExploreScreen = () => {
             <MapView.Marker key={index} coordinate={marker.coordinate} onPress={(e)=>onMarkerPress(e)}>
               <Animated.View style={[styles.markerWrap]}>
                 <Animated.Image
-                  source={require('../assets/map_marker.png')}
+                  source={require('../assets/yotti/Asset1.png')}
                   style={[styles.marker, scaleStyle]}
                   resizeMode="cover"
                 />
