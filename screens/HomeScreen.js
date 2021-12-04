@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         width: 70,
         height: 70,
-        backgroundColor: "#fdeae7" /* '#37B24D' */,
+        backgroundColor: "#defae3" /* '#37B24D' */,
         borderRadius: 50,
     },
     categoryBtnTxt: {
