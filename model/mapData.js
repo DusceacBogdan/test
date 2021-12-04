@@ -11,55 +11,60 @@ export const markers = [
             latitude: 46.762805,
             longitude: 23.574303,
         },
-        title: "Amazing Food Place",
+        title: "Glass and Aluminium Recycle Center",
         description: "This is the best food place",
         image: Images[0].image,
         rating: 4,
         reviews: 99,
+        items: "Glass, Aluminium"
     },
     {
         coordinate: {
             latitude: 46.778318,
             longitude: 23.609913,
         },
-        title: "Second Amazing Food Place",
+        title: "Plastic Recycle Center",
         description: "This is the second best food place",
         image: Images[1].image,
         rating: 5,
         reviews: 102,
+        items: "Plastic"
     },
     {
         coordinate: {
             latitude: 46.772306,
             longitude: 23.581058,
         },
-        title: "Third Amazing Food Place",
+        title: "Electronics Recycle Center",
         description: "This is the third best food place",
         image: Images[2].image,
         rating: 3,
         reviews: 220,
+        items: "Electronics"
     },
     {
         coordinate: {
             latitude: 46.766346,
             longitude: 23.591239,
         },
-        title: "Fourth Amazing Food Place",
+        title: "Paper and Cardboard Recycle Center",
         description: "This is the fourth best food place",
         image: Images[3].image,
         rating: 4,
         reviews: 48,
+        items: "Paper, Cardboard"
     },
     {
         coordinate: {
             latitude: 46.763532,
             longitude: 23.569983,
         },
-        title: "Fifth Amazing Food Place",
+        title: "Second Plastic Recycle Center",
         description: "This is the fifth best food place",
         image: Images[3].image,
         rating: 4,
         reviews: 178,
+        items: "Plastic"
     },
 ];
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, SafeAreaView, StyleSheet } from "react-native";
 import {
     Avatar,
@@ -10,13 +10,13 @@ import {
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-import { auth } from "../firebase";
+import { auth, firebase } from "../firebase";
 
 // import Share from 'react-native-share';
 
 import files from "../assets/filesBase64";
 
-const ProfileScreen = ({navigation}) => {
+const ProfileScreen = ({ navigation }) => {
     //   const myCustomShare = async() => {
     //     const shareOptions = {
     //       message: 'Order your next meal from FoodFinder App. I\'ve already ordered more than 10 meals on it.',
@@ -32,6 +32,26 @@ const ProfileScreen = ({navigation}) => {
     //     }
     //   };
 
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [uuid, setUuid] = useState('')
+
+    useEffect(() => {
+        console.log("pula")
+        const getUid = () => {
+            setUuid = firebase.auth().currentUser.uid
+        }
+        const readUserData = () => {
+            let dbRef = firebase.database().ref('Users')
+            dbRef.orderByChild("uuid").equalTo(firebase.database().ref('Users')).on("value", snapshot => {
+                console.log(snapshot.val().name)
+            })
+        }
+        
+    }, [])
+
     const handleSignOut = () => {
         auth.signOut()
             .then(() => {
@@ -39,6 +59,8 @@ const ProfileScreen = ({navigation}) => {
             })
             .catch(error => alert(error.message))
     }
+
+
 
     return (
         <SafeAreaView style={styles.container}>
@@ -61,7 +83,7 @@ const ProfileScreen = ({navigation}) => {
                                 },
                             ]}
                         >
-                            John Doe
+                            {name}
                         </Title>
                         <Caption style={styles.caption}>@j_doe</Caption>
                     </View>
@@ -72,19 +94,19 @@ const ProfileScreen = ({navigation}) => {
                 <View style={styles.row}>
                     <Icon name="map-marker-radius" color="#777777" size={20} />
                     <Text style={{ color: "#777777", marginLeft: 20 }}>
-                        Kolkata, India
+                        Cluj-Napoca, Romania
                     </Text>
                 </View>
                 <View style={styles.row}>
                     <Icon name="phone" color="#777777" size={20} />
                     <Text style={{ color: "#777777", marginLeft: 20 }}>
-                        +91-900000009
+                        {phoneNumber}
                     </Text>
                 </View>
                 <View style={styles.row}>
                     <Icon name="email" color="#777777" size={20} />
                     <Text style={{ color: "#777777", marginLeft: 20 }}>
-                        john_doe@email.com
+                        {email}
                     </Text>
                 </View>
             </View>
@@ -109,19 +131,19 @@ const ProfileScreen = ({navigation}) => {
             </View>
 
             <View style={styles.menuWrapper}>
-                <TouchableRipple onPress={() => {}}>
+                <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
                         <Icon name="heart-outline" color="#FF6347" size={25} />
                         <Text style={styles.menuItemText}>Your Favorites</Text>
                     </View>
                 </TouchableRipple>
-                <TouchableRipple onPress={() => {}}>
+                <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
                         <Icon name="credit-card" color="#FF6347" size={25} />
                         <Text style={styles.menuItemText}>Payment</Text>
                     </View>
                 </TouchableRipple>
-                <TouchableRipple onPress={() => {}}>
+                <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
                         <Icon name="share-outline" color="#FF6347" size={25} />
                         <Text style={styles.menuItemText}>
@@ -129,7 +151,7 @@ const ProfileScreen = ({navigation}) => {
                         </Text>
                     </View>
                 </TouchableRipple>
-                <TouchableRipple onPress={() => {}}>
+                <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
                         <Icon
                             name="account-check-outline"
@@ -139,7 +161,7 @@ const ProfileScreen = ({navigation}) => {
                         <Text style={styles.menuItemText}>Support</Text>
                     </View>
                 </TouchableRipple>
-                <TouchableRipple onPress={() => {}}>
+                <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
                         <Icon
                             name="settings-outline"

@@ -11,11 +11,12 @@ import {
   Dimensions,
   Platform,
 } from "react-native";
-import MapView, {PROVIDER_GOOGLE} from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import { markers, mapDarkStyle, mapStandardStyle } from '../model/mapData';
 import StarRating from '../components/StarRating';
@@ -33,32 +34,32 @@ const ExploreScreen = () => {
   const initialMapState = {
     markers,
     categories: [
-      { 
-        name: 'Fastfood Center', 
+      {
+        name: 'Plastic',
         icon: <MaterialCommunityIcons style={styles.chipsIcon} name="food-fork-drink" size={18} />,
       },
       {
-        name: 'Restaurant',
-        icon: <Ionicons name="ios-restaurant" style={styles.chipsIcon} size={18} />,
+        name: 'Glass',
+        icon: <MaterialCommunityIcons style={styles.chipsIcon} name="bottle-wine" size={18} color="black" />,
       },
       {
-        name: 'Dineouts',
-        icon: <Ionicons name="md-restaurant" style={styles.chipsIcon} size={18} />,
+        name: 'Paper and Cardboard',
+        icon: <Ionicons name="newspaper-sharp" style={styles.chipsIcon} size={18} color="black" />,
       },
       {
-        name: 'Snacks Corner',
-        icon: <MaterialCommunityIcons name="food" style={styles.chipsIcon} size={18} />,
+        name: 'Electronics',
+        icon: <MaterialIcons name="electrical-services" size={18} color="black" />,
       },
       {
-        name: 'Hotel',
-        icon: <Fontisto name="hotel" style={styles.chipsIcon} size={15} />,
+        name: 'Metal',
+        icon: <MaterialCommunityIcons name="trash-can" size={18} color="black" />,
       },
-  ],
+    ],
     region: {
       latitude: 46.769327,
       longitude: 23.588669,
-      latitudeDelta: 0.04864195044303443,
-      longitudeDelta: 0.040142817690068,
+      latitudeDelta: 0.11864195044303443,
+      longitudeDelta: 0.110142817690068,
     },
   };
 
@@ -77,10 +78,11 @@ const ExploreScreen = () => {
         index = 0;
       }
 
+
       clearTimeout(regionTimeout);
 
       const regionTimeout = setTimeout(() => {
-        if( mapIndex !== index ) {
+        if (mapIndex !== index) {
           mapIndex = index;
           const { coordinate } = state.markers[index];
           _map.current.animateToRegion(
@@ -115,12 +117,12 @@ const ExploreScreen = () => {
   const onMarkerPress = (mapEventData) => {
     const markerID = mapEventData._targetInst.return.key;
 
-    let x = (markerID * CARD_WIDTH) + (markerID * 20); 
+    let x = (markerID * CARD_WIDTH) + (markerID * 20);
     if (Platform.OS === 'ios') {
       x = x - SPACING_FOR_CARD_INSET;
     }
 
-    _scrollView.current.scrollTo({x: x, y: 0, animated: true});
+    _scrollView.current.scrollTo({ x: x, y: 0, animated: true });
   }
 
   const _map = React.useRef(null);
@@ -144,7 +146,7 @@ const ExploreScreen = () => {
             ],
           };
           return (
-            <MapView.Marker key={index} coordinate={marker.coordinate} onPress={(e)=>onMarkerPress(e)}>
+            <MapView.Marker key={index} coordinate={marker.coordinate} onPress={(e) => onMarkerPress(e)}>
               <Animated.View style={[styles.markerWrap]}>
                 <Animated.Image
                   source={require('../assets/yotti/Asset.png')}
@@ -156,7 +158,7 @@ const ExploreScreen = () => {
           );
         })}
       </MapView>
-      <View style={styles.searchBox}>
+      {/* <View style={styles.searchBox}>
         <TextInput 
           placeholder="Search here"
           placeholderTextColor="#000"
@@ -164,7 +166,7 @@ const ExploreScreen = () => {
           style={{flex:1,padding:0}}
         />
         <Ionicons name="ios-search" size={20} />
-      </View>
+      </View> */}
       <ScrollView
         horizontal
         scrollEventThrottle={1}
@@ -172,10 +174,10 @@ const ExploreScreen = () => {
         height={50}
         style={styles.chipsScrollView}
         contentInset={{ // iOS only
-          top:0,
-          left:0,
-          bottom:0,
-          right:20
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 20
         }}
         contentContainerStyle={{
           paddingRight: Platform.OS === 'android' ? 20 : 0
@@ -216,12 +218,12 @@ const ExploreScreen = () => {
               },
             },
           ],
-          {useNativeDriver: true}
+          { useNativeDriver: true }
         )}
       >
-        {state.markers.map((marker, index) =>(
+        {state.markers.map((marker, index) => (
           <View style={styles.card} key={index}>
-            <Image 
+            <Image
               source={marker.image}
               style={styles.cardImage}
               resizeMode="cover"
@@ -229,10 +231,10 @@ const ExploreScreen = () => {
             <View style={styles.textContent}>
               <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
               <StarRating ratings={marker.rating} reviews={marker.reviews} />
-              <Text numberOfLines={1} style={styles.cardDescription}>{marker.description}</Text>
+              <Text numberOfLines={1} style={styles.cardDescription}>{marker.items}</Text>
               <View style={styles.button}>
                 <TouchableOpacity
-                  onPress={() => {}}
+                  onPress={() => { }}
                   style={[styles.signIn, {
                     borderColor: '#FF6347',
                     borderWidth: 1
@@ -258,12 +260,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   searchBox: {
-    position:'absolute', 
-    marginTop: Platform.OS === 'ios' ? 40 : 20, 
-    flexDirection:"row",
+    position: 'absolute',
+    marginTop: Platform.OS === 'ios' ? 40 : 20,
+    flexDirection: "row",
     backgroundColor: '#fff',
     width: '90%',
-    alignSelf:'center',
+    alignSelf: 'center',
     borderRadius: 5,
     padding: 10,
     shadowColor: '#ccc',
@@ -273,21 +275,22 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   chipsScrollView: {
-    position:'absolute', 
-    top:Platform.OS === 'ios' ? 90 : 80, 
-    paddingHorizontal:10
+    position: 'absolute',
+    top: Platform.OS === 'ios' ? 90 : 80,
+    paddingHorizontal: 10,
+    marginTop: -40
   },
   chipsIcon: {
     marginRight: 5,
   },
   chipsItem: {
-    flexDirection:"row",
-    backgroundColor:'#fff', 
-    borderRadius:20,
-    padding:8,
-    paddingHorizontal:20, 
-    marginHorizontal:10,
-    height:35,
+    flexDirection: "row",
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 8,
+    paddingHorizontal: 20,
+    marginHorizontal: 10,
+    height: 35,
     shadowColor: '#ccc',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.5,
@@ -341,8 +344,8 @@ const styles = StyleSheet.create({
   markerWrap: {
     alignItems: "center",
     justifyContent: "center",
-    width:50,
-    height:50,
+    width: 50,
+    height: 50,
   },
   marker: {
     width: 30,
@@ -353,14 +356,14 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   signIn: {
-      width: '100%',
-      padding:5,
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 3
+    width: '100%',
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 3
   },
   textSign: {
-      fontSize: 14,
-      fontWeight: 'bold'
+    fontSize: 14,
+    fontWeight: 'bold'
   }
 });
