@@ -147,7 +147,7 @@ const ExploreScreen = () => {
             <MapView.Marker key={index} coordinate={marker.coordinate} onPress={(e)=>onMarkerPress(e)}>
               <Animated.View style={[styles.markerWrap]}>
                 <Animated.Image
-                  source={require('../assets/yotti/Asset1.png')}
+                  source={require('../assets/yotti/Asset.png')}
                   style={[styles.marker, scaleStyle]}
                   resizeMode="cover"
                 />

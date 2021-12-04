@@ -19,8 +19,8 @@ export const markers = [
     },
     {
         coordinate: {
-            latitude: 22.6345648,
-            longitude: 88.4377279,
+            latitude: 46.778318,
+            longitude: 23.609913,
         },
         title: "Second Amazing Food Place",
         description: "This is the second best food place",
@@ -30,8 +30,8 @@ export const markers = [
     },
     {
         coordinate: {
-            latitude: 22.6281662,
-            longitude: 88.4410113,
+            latitude: 46.772306,
+            longitude: 23.581058,
         },
         title: "Third Amazing Food Place",
         description: "This is the third best food place",
@@ -41,8 +41,8 @@ export const markers = [
     },
     {
         coordinate: {
-            latitude: 22.6341137,
-            longitude: 88.4497463,
+            latitude: 46.766346,
+            longitude: 23.591239,
         },
         title: "Fourth Amazing Food Place",
         description: "This is the fourth best food place",
@@ -52,8 +52,8 @@ export const markers = [
     },
     {
         coordinate: {
-            latitude: 22.6292757,
-            longitude: 88.444781,
+            latitude: 46.763532,
+            longitude: 23.569983,
         },
         title: "Fifth Amazing Food Place",
         description: "This is the fifth best food place",
