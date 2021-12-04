@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
     View,
     Text,
@@ -9,17 +9,16 @@ import {
     Platform,
     StyleSheet,
     ScrollView,
-    StatusBar
-} from 'react-native';
-import * as Animatable from 'react-native-animatable';
-import { LinearGradient } from 'expo-linear-gradient'
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Feather from 'react-native-vector-icons/Feather';
+    StatusBar,
+} from "react-native";
+import * as Animatable from "react-native-animatable";
+import { LinearGradient } from "expo-linear-gradient";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Feather from "react-native-vector-icons/Feather";
 
-import { auth, firebase } from '../firebase'
+import { auth, firebase } from "../firebase";
 
 const SignUpScreen = ({ navigation }) => {
-
     // const [data, setData] = React.useState({
     //     username: '',
     //     password: '',
@@ -73,24 +72,23 @@ const SignUpScreen = ({ navigation }) => {
     //     });
     // }
 
-
     ///D-ALE MELE..................................................................................................
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [name, setName] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [vouchersArray, setVouchersArray] = useState([])
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [vouchersArray, setVouchersArray] = useState([]);
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
             if (user) {
-                navigation.replace("Home")
+                navigation.replace("Home");
             }
-        })
+        });
 
-        return unsubscribe
-    }, [])
+        return unsubscribe;
+    }, []);
 
     // const writeUserData = () => {
     //     handleSignUp
@@ -108,114 +106,118 @@ const SignUpScreen = ({ navigation }) => {
 
     const handleSignUp = () => {
         auth.createUserWithEmailAndPassword(email, password)
-            .then(userCredentials => {
-                firebase.database().ref('Users/').push({
-                    email: email,
-                    name: name,
-                    phoneNumber: phoneNumber,
-                    uuid: firebase.auth().currentUser.uid
-                }).catch((error) => {
-                    console.log(error)
-                })
+            .then((userCredentials) => {
+                firebase
+                    .database()
+                    .ref("Users/")
+                    .push({
+                        email: email,
+                        name: name,
+                        phoneNumber: phoneNumber,
+                        uuid: firebase.auth().currentUser.uid,
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
                 const user = userCredentials.user;
                 console.log("Registered with: ", user.email);
             })
-            .catch(error => alert(error.message))
-
-    }
+            .catch((error) => alert(error.message));
+    };
 
     const goToLogin = () => {
-        navigation.replace("Login")
-    }
+        navigation.replace("Login");
+    };
 
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor='#FF6347' barStyle="light-content" />
+            <StatusBar backgroundColor="#37B24D" barStyle="light-content" />
             <View style={styles.header}>
                 <Text style={styles.text_header}>Register Now!</Text>
             </View>
-            <Animatable.View
-                animation="fadeInUpBig"
-                style={styles.footer}
-            >
+            <Animatable.View animation="fadeInUpBig" style={styles.footer}>
                 <ScrollView>
-
                     <Text style={styles.text_footer}>Name</Text>
                     <View style={styles.action}>
-                        <FontAwesome
-                            name="user-o"
-                            color="#05375a"
-                            size={20}
-                        />
+                        <FontAwesome name="user-o" color="#05375a" size={20} />
                         <TextInput
                             placeholder="Name"
                             style={styles.textInput}
-                            onChangeText={text => setName(text)}
+                            onChangeText={(text) => setName(text)}
                         />
-
                     </View>
-                    <Text style={[styles.text_footer, {
-                        marginTop: 10
-                    }]}>Phone number</Text>
+                    <Text
+                        style={[
+                            styles.text_footer,
+                            {
+                                marginTop: 10,
+                            },
+                        ]}
+                    >
+                        Phone number
+                    </Text>
                     <View style={styles.action}>
-                        <FontAwesome
-                            name="user-o"
-                            color="#05375a"
-                            size={20}
-                        />
+                        <FontAwesome name="user-o" color="#05375a" size={20} />
                         <TextInput
                             placeholder="Phone number"
                             style={styles.textInput}
                             keyboardType="phone-pad"
-                            onChangeText={text => setPhoneNumber(text)}
+                            onChangeText={(text) => setPhoneNumber(text)}
                         />
-
                     </View>
-                    <Text style={[styles.text_footer, {
-                        marginTop: 10
-                    }]}>Email</Text>
+                    <Text
+                        style={[
+                            styles.text_footer,
+                            {
+                                marginTop: 10,
+                            },
+                        ]}
+                    >
+                        Email
+                    </Text>
                     <View style={styles.action}>
-                        <FontAwesome
-                            name="user-o"
-                            color="#05375a"
-                            size={20}
-                        />
+                        <FontAwesome name="user-o" color="#05375a" size={20} />
                         <TextInput
                             placeholder="Email"
                             style={styles.textInput}
                             autoCapitalize="none"
-                            onChangeText={text => setEmail(text)}
+                            onChangeText={(text) => setEmail(text)}
                         />
                     </View>
 
-                    <Text style={[styles.text_footer, {
-                        marginTop: 10
-                    }]}>Password</Text>
+                    <Text
+                        style={[
+                            styles.text_footer,
+                            {
+                                marginTop: 10,
+                            },
+                        ]}
+                    >
+                        Password
+                    </Text>
                     <View style={styles.action}>
-                        <Feather
-                            name="lock"
-                            color="#05375a"
-                            size={20}
-                        />
+                        <Feather name="lock" color="#05375a" size={20} />
                         <TextInput
                             placeholder="Your Password"
                             style={styles.textInput}
                             autoCapitalize="none"
-                            onChangeText={text => setPassword(text)}
+                            onChangeText={(text) => setPassword(text)}
                             secureTextEntry
                         />
-                        
                     </View>
 
-                    <Text style={[styles.text_footer, {
-                        marginTop: 10
-                    }]}>Confirm Password</Text>
+                    <Text
+                        style={[
+                            styles.text_footer,
+                            {
+                                marginTop: 10,
+                            },
+                        ]}
+                    >
+                        Confirm Password
+                    </Text>
                     <View style={styles.action}>
-                        <Feather
-                            name="lock"
-                            color="#05375a"
-                            size={20}
-                        />
+                        <Feather name="lock" color="#05375a" size={20} />
                         <TextInput
                             placeholder="Confirm Your Password"
                             style={styles.textInput}
@@ -227,9 +229,25 @@ const SignUpScreen = ({ navigation }) => {
                         <Text style={styles.color_textPrivate}>
                             By signing up you agree to our
                         </Text>
-                        <Text style={[styles.color_textPrivate, { fontWeight: 'bold' }]}>{" "}Terms of service</Text>
-                        <Text style={styles.color_textPrivate}>{" "}and</Text>
-                        <Text style={[styles.color_textPrivate, { fontWeight: 'bold' }]}>{" "}Privacy policy</Text>
+                        <Text
+                            style={[
+                                styles.color_textPrivate,
+                                { fontWeight: "bold" },
+                            ]}
+                        >
+                            {" "}
+                            Terms of service
+                        </Text>
+                        <Text style={styles.color_textPrivate}> and</Text>
+                        <Text
+                            style={[
+                                styles.color_textPrivate,
+                                { fontWeight: "bold" },
+                            ]}
+                        >
+                            {" "}
+                            Privacy policy
+                        </Text>
                     </View>
                     <View style={styles.button}>
                         <TouchableOpacity
@@ -237,26 +255,43 @@ const SignUpScreen = ({ navigation }) => {
                             onPress={handleSignUp}
                         >
                             <LinearGradient
-                                colors={['#FFA07A', '#FF6347']}
+                                colors={["#5eff85", "#37B24D"]}
                                 style={styles.signIn}
                             >
-                                <Text style={[styles.textSign, {
-                                    color: '#fff'
-                                }]}>Sign Up</Text>
+                                <Text
+                                    style={[
+                                        styles.textSign,
+                                        {
+                                            color: "#fff",
+                                        },
+                                    ]}
+                                >
+                                    Sign Up
+                                </Text>
                             </LinearGradient>
                         </TouchableOpacity>
 
                         <TouchableOpacity
                             onPress={goToLogin}
-                            style={[styles.signIn, {
-                                borderColor: '#FF6347',
-                                borderWidth: 1,
-                                marginTop: 15
-                            }]}
+                            style={[
+                                styles.signIn,
+                                {
+                                    borderColor: "#37B24D",
+                                    borderWidth: 1,
+                                    marginTop: 15,
+                                },
+                            ]}
                         >
-                            <Text style={[styles.textSign, {
-                                color: '#FF6347'
-                            }]}>Sign In</Text>
+                            <Text
+                                style={[
+                                    styles.textSign,
+                                    {
+                                        color: "#37B24D",
+                                    },
+                                ]}
+                            >
+                                Sign In
+                            </Text>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
@@ -270,65 +305,65 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FF6347'
+        backgroundColor: "#37B24D",
     },
     header: {
         flex: 1,
-        justifyContent: 'flex-end',
+        justifyContent: "flex-end",
         paddingHorizontal: 20,
-        paddingBottom: 50
+        paddingBottom: 50,
     },
     footer: {
-        flex: Platform.OS === 'ios' ? 3 : 5,
-        backgroundColor: '#fff',
+        flex: Platform.OS === "ios" ? 3 : 5,
+        backgroundColor: "#fff",
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         paddingHorizontal: 20,
-        paddingVertical: 30
+        paddingVertical: 30,
     },
     text_header: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 30
+        color: "#fff",
+        fontWeight: "bold",
+        fontSize: 30,
     },
     text_footer: {
-        color: '#05375a',
-        fontSize: 18
+        color: "#05375a",
+        fontSize: 18,
     },
     action: {
-        flexDirection: 'row',
+        flexDirection: "row",
         marginTop: 10,
         borderBottomWidth: 1,
-        borderBottomColor: '#f2f2f2',
-        paddingBottom: 5
+        borderBottomColor: "#f2f2f2",
+        paddingBottom: 5,
     },
     textInput: {
         flex: 1,
-        marginTop: Platform.OS === 'ios' ? 0 : -12,
+        marginTop: Platform.OS === "ios" ? 0 : -12,
         paddingLeft: 10,
-        color: '#05375a',
+        color: "#05375a",
     },
     button: {
-        alignItems: 'center',
-        marginTop: 50
+        alignItems: "center",
+        marginTop: 50,
     },
     signIn: {
-        width: '100%',
+        width: "100%",
         height: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: 10
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 10,
     },
     textSign: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: "bold",
     },
     textPrivate: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        marginTop: 20
+        flexDirection: "row",
+        flexWrap: "wrap",
+        marginTop: 20,
     },
     color_textPrivate: {
-        color: 'grey'
-    }
+        color: "grey",
+    },
 });

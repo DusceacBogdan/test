@@ -9,6 +9,7 @@ import {
 } from "react-native-paper";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Icons from "react-native-vector-icons/Ionicons";
 
 import { auth, firebase } from "../firebase";
 
@@ -55,10 +56,10 @@ const ProfileScreen = ({ navigation }) => {
     const handleSignOut = () => {
         auth.signOut()
             .then(() => {
-                navigation.replace("Login")
+                navigation.replace("Login");
             })
-            .catch(error => alert(error.message))
-    }
+            .catch((error) => alert(error.message));
+    };
 
 
 
@@ -133,19 +134,19 @@ const ProfileScreen = ({ navigation }) => {
             <View style={styles.menuWrapper}>
                 <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
-                        <Icon name="heart-outline" color="#FF6347" size={25} />
+                        <Icon name="heart-outline" color="#37B24D" size={25} />
                         <Text style={styles.menuItemText}>Your Favorites</Text>
                     </View>
                 </TouchableRipple>
                 <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
-                        <Icon name="credit-card" color="#FF6347" size={25} />
+                        <Icon name="credit-card" color="#37B24D" size={25} />
                         <Text style={styles.menuItemText}>Payment</Text>
                     </View>
                 </TouchableRipple>
                 <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
-                        <Icon name="share-outline" color="#FF6347" size={25} />
+                        <Icon name="share-outline" color="#37B24D" size={25} />
                         <Text style={styles.menuItemText}>
                             Tell Your Friends
                         </Text>
@@ -155,7 +156,7 @@ const ProfileScreen = ({ navigation }) => {
                     <View style={styles.menuItem}>
                         <Icon
                             name="account-check-outline"
-                            color="#FF6347"
+                            color="#37B24D"
                             size={25}
                         />
                         <Text style={styles.menuItemText}>Support</Text>
@@ -163,9 +164,9 @@ const ProfileScreen = ({ navigation }) => {
                 </TouchableRipple>
                 <TouchableRipple onPress={() => { }}>
                     <View style={styles.menuItem}>
-                        <Icon
+                        <Icons
                             name="settings-outline"
-                            color="#FF6347"
+                            color="#37B24D"
                             size={25}
                         />
                         <Text style={styles.menuItemText}>Settings</Text>
@@ -173,9 +174,9 @@ const ProfileScreen = ({ navigation }) => {
                 </TouchableRipple>
                 <TouchableRipple onPress={handleSignOut}>
                     <View style={styles.menuItem}>
-                        <Icon
+                        <Icons
                             name="settings-outline"
-                            color="#FF6347"
+                            color="#37B24D"
                             size={25}
                         />
                         <Text style={styles.menuItemText}>Logout</Text>
