@@ -14,6 +14,7 @@ import {
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Icons from "react-native-vector-icons/Ionicons";
 
 import { AuthContext } from "../components/context";
 
@@ -112,7 +113,7 @@ export function DrawerContent(props) {
                         />
                         <DrawerItem
                             icon={({ color, size }) => (
-                                <Icon
+                                <Icons
                                     name="settings-outline"
                                     color={color}
                                     size={size}
