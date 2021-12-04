@@ -10,11 +10,13 @@ import {
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
+import { auth } from "../firebase";
+
 // import Share from 'react-native-share';
 
 import files from "../assets/filesBase64";
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
     //   const myCustomShare = async() => {
     //     const shareOptions = {
     //       message: 'Order your next meal from FoodFinder App. I\'ve already ordered more than 10 meals on it.',
@@ -29,6 +31,14 @@ const ProfileScreen = () => {
     //       console.log('Error => ', error);
     //     }
     //   };
+
+    const handleSignOut = () => {
+        auth.signOut()
+            .then(() => {
+                navigation.replace("Login")
+            })
+            .catch(error => alert(error.message))
+    }
 
     return (
         <SafeAreaView style={styles.container}>
@@ -137,6 +147,16 @@ const ProfileScreen = () => {
                             size={25}
                         />
                         <Text style={styles.menuItemText}>Settings</Text>
+                    </View>
+                </TouchableRipple>
+                <TouchableRipple onPress={handleSignOut}>
+                    <View style={styles.menuItem}>
+                        <Icon
+                            name="settings-outline"
+                            color="#FF6347"
+                            size={25}
+                        />
+                        <Text style={styles.menuItemText}>Logout</Text>
                     </View>
                 </TouchableRipple>
             </View>

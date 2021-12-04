@@ -18,6 +18,7 @@ import {View} from 'react-native-animatable';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import CardListScreen from './CardListScreen';
 import CardItemDetails from './CardItemDetails';
+import ProfileStackNavigation from '../components/ProfileStackNavigation';
 
 const HomeStack = createStackNavigator();
 const NotificationStack = createStackNavigator();
@@ -199,7 +200,7 @@ const ProfileStackScreen = ({navigation}) => {
       }}>
       <ProfileStack.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={ProfileStackNavigation}
         options={{
           title: '',
           headerLeft: () => (
