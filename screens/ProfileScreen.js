@@ -47,7 +47,7 @@ const ProfileScreen = ({ navigation }) => {
         const readUserData = () => {
             let dbRef = firebase.database().ref('Users')
             dbRef.orderByChild("uuid").equalTo(firebase.database().ref('Users')).on("value", snapshot => {
-                console.log(snapshot.val().name)
+                console.log(snapshot.val())
             })
         }
         
@@ -112,7 +112,7 @@ const ProfileScreen = ({ navigation }) => {
                 </View>
             </View>
 
-            <View style={styles.infoBoxWrapper}>
+            {/* <View style={styles.infoBoxWrapper}>
                 <View
                     style={[
                         styles.infoBox,
@@ -129,7 +129,7 @@ const ProfileScreen = ({ navigation }) => {
                     <Title>12</Title>
                     <Caption>Orders</Caption>
                 </View>
-            </View>
+            </View> */}
 
             <View style={styles.menuWrapper}>
                 <TouchableRipple onPress={() => { }}>
