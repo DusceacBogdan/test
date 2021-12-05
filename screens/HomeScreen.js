@@ -153,7 +153,7 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={markers[1].image}
+                            source={require("../assets/recycle/recycle-image7.png")}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />
@@ -172,7 +172,7 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={markers[2].image}
+                            source={require("../assets/recycle/recycle-image8.png")}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />
@@ -191,7 +191,7 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={markers[3].image}
+                            source={require("../assets/recycle/recycle-image9.png")}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />

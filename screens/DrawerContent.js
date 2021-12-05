@@ -30,11 +30,8 @@ export function DrawerContent(props) {
                     <View style={styles.userInfoSection}>
                         <View style={{ flexDirection: "row", marginTop: 15 }}>
                             <Avatar.Image
-                                source={{
-                                    uri:
-                                        "https://api.adorable.io/avatars/50/abott@adorable.png",
-                                }}
-                                size={50}
+                                source={require("../assets/logo2.png")}
+                                size={60}
                             />
                             <View
                                 style={{
@@ -42,7 +39,9 @@ export function DrawerContent(props) {
                                     flexDirection: "column",
                                 }}
                             >
-                                <Title style={styles.title}>Firstname LastName</Title>
+                                <Title style={styles.title}>
+                                    FirstName LastName
+                                </Title>
                                 {/* <Caption style={styles.caption}>@j_doe</Caption> */}
                             </View>
                         </View>
@@ -178,7 +177,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 16,
-        marginTop: 3,
+        marginTop: 12,
         fontWeight: "bold",
     },
     caption: {
