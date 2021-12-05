@@ -34,21 +34,21 @@ const HomeScreen = ({ navigation }) => {
                 >
                     <View style={styles.slide}>
                         <Image
-                            source={require("../assets/banners/food-banner1.jpg")}
+                            source={require("../assets/recycle/download.png")}
                             resizeMode="cover"
                             style={styles.sliderImage}
                         />
                     </View>
                     <View style={styles.slide}>
                         <Image
-                            source={require("../assets/banners/food-banner2.jpg")}
+                            source={require("../assets/recycle/nareeta-martin-FoG7PKNYjpM-unsplash.jpg")}
                             resizeMode="cover"
                             style={styles.sliderImage}
                         />
                     </View>
                     <View style={styles.slide}>
                         <Image
-                            source={require("../assets/banners/food-banner3.jpg")}
+                            source={require("../assets/recycle/commercial-plastic-recycling.jpeg")}
                             resizeMode="cover"
                             style={styles.sliderImage}
                         />
@@ -145,7 +145,7 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={require("../assets/banners/food-banner2.jpg")}
+                            source={require("../assets/recycle/download.png")}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />
@@ -161,7 +161,7 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={require("../assets/banners/food-banner3.jpg")}
+                            source={require("../assets/recycle/nareeta-martin-FoG7PKNYjpM-unsplash.jpg")}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />
@@ -177,7 +177,7 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={require("../assets/banners/food-banner4.jpg")}
+                            source={require("../assets/recycle/commercial-plastic-recycling.jpeg")}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />
