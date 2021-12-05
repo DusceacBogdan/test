@@ -41,7 +41,6 @@ const ProfileScreen = ({ navigation }) => {
     const [uuid, setUuid] = useState('')
 
     useEffect(() => {
-        console.log("pula")
         const getUid = () => {
             setUuid = firebase.auth().currentUser.uid
         }
@@ -85,7 +84,6 @@ const ProfileScreen = ({ navigation }) => {
                         >
                             Firstname Lastname
                         </Title>
-                        {/* <Caption style={styles.caption}>@j_doe</Caption> */}
                     </View>
                 </View>
             </View>
@@ -110,25 +108,6 @@ const ProfileScreen = ({ navigation }) => {
                     </Text>
                 </View>
             </View>
-
-            {/* <View style={styles.infoBoxWrapper}>
-                <View
-                    style={[
-                        styles.infoBox,
-                        {
-                            borderRightColor: "#dddddd",
-                            borderRightWidth: 1,
-                        },
-                    ]}
-                >
-                    <Title>₹140.50</Title>
-                    <Caption>Wallet</Caption>
-                </View>
-                <View style={styles.infoBox}>
-                    <Title>12</Title>
-                    <Caption>Orders</Caption>
-                </View>
-            </View> */}
 
             <View style={styles.menuWrapper}>
                 <TouchableRipple onPress={() => { }}>

@@ -43,11 +43,10 @@ export function DrawerContent(props) {
                                 }}
                             >
                                 <Title style={styles.title}>Firstname LastName</Title>
-                                {/* <Caption style={styles.caption}>@j_doe</Caption> */}
                             </View>
                         </View>
 
-                        <View style={styles.row}>
+                        {/* <View style={styles.row}> */}
                             {/* <View style={styles.section}>
                                 <Paragraph
                                     style={[styles.paragraph, styles.caption]}
@@ -68,7 +67,7 @@ export function DrawerContent(props) {
                                     Followers
                                 </Caption>
                             </View> */}
-                        </View>
+                        {/* </View> */}
                     </View>
 
                     <Drawer.Section style={styles.drawerSection}>

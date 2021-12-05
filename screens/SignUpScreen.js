@@ -19,60 +19,7 @@ import Feather from "react-native-vector-icons/Feather";
 import { auth, firebase } from "../firebase";
 
 const SignUpScreen = ({ navigation }) => {
-    // const [data, setData] = React.useState({
-    //     username: '',
-    //     password: '',
-    //     confirm_password: '',
-    //     check_textInputChange: false,
-    //     secureTextEntry: true,
-    //     confirm_secureTextEntry: true,
-    // });
 
-    // const textInputChange = (val) => {
-    //     if( val.length !== 0 ) {
-    //         setData({
-    //             ...data,
-    //             username: val,
-    //             check_textInputChange: true
-    //         });
-    //     } else {
-    //         setData({
-    //             ...data,
-    //             username: val,
-    //             check_textInputChange: false
-    //         });
-    //     }
-    // }
-
-    // const handlePasswordChange = (val) => {
-    //     setData({
-    //         ...data,
-    //         password: val
-    //     });
-    // }
-
-    // const handleConfirmPasswordChange = (val) => {
-    //     setData({
-    //         ...data,
-    //         confirm_password: val
-    //     });
-    // }
-
-    // const updateSecureTextEntry = () => {
-    //     setData({
-    //         ...data,
-    //         secureTextEntry: !data.secureTextEntry
-    //     });
-    // }
-
-    // const updateConfirmSecureTextEntry = () => {
-    //     setData({
-    //         ...data,
-    //         confirm_secureTextEntry: !data.confirm_secureTextEntry
-    //     });
-    // }
-
-    ///D-ALE MELE..................................................................................................
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -89,20 +36,6 @@ const SignUpScreen = ({ navigation }) => {
 
         return unsubscribe;
     }, []);
-
-    // const writeUserData = () => {
-    //     handleSignUp
-    //     firebase.database().ref('Users/').push({
-    //         email,
-    //         name,
-    //         phoneNumber
-    //     }).then((userCredentials) => {
-    //         console.log("success")
-    //     }).catch((error) => {
-    //         console.log(error)
-    //     })
-
-    // }
 
     const handleSignUp = () => {
         auth.createUserWithEmailAndPassword(email, password)
@@ -201,6 +134,7 @@ const SignUpScreen = ({ navigation }) => {
                             placeholder="Your Password"
                             style={styles.textInput}
                             autoCapitalize="none"
+                            secureTextEntry
                             onChangeText={(text) => setPassword(text)}
                             secureTextEntry
                         />
@@ -221,6 +155,7 @@ const SignUpScreen = ({ navigation }) => {
                         <TextInput
                             placeholder="Confirm Your Password"
                             style={styles.textInput}
+                            secureTextEntry
                             autoCapitalize="none"
                             secureTextEntry
                         />
