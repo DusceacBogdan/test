@@ -10,6 +10,7 @@ import {
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icons from "react-native-vector-icons/Ionicons";
+import { Entypo } from '@expo/vector-icons';
 
 import { auth, firebase } from "../firebase";
 
@@ -45,12 +46,10 @@ const ProfileScreen = ({ navigation }) => {
             setUuid = firebase.auth().currentUser.uid
         }
         const readUserData = () => {
-            let dbRef = firebase.database().ref('Users')
-            dbRef.orderByChild("uuid").equalTo(firebase.database().ref('Users')).on("value", snapshot => {
-                console.log(snapshot.val())
-            })
+            let user = auth().currentUser
+            return firebase.database().ref("Users").doc
         }
-        
+
     }, [])
 
     const handleSignOut = () => {
@@ -84,9 +83,9 @@ const ProfileScreen = ({ navigation }) => {
                                 },
                             ]}
                         >
-                            {name}
+                            Firstname Lastname
                         </Title>
-                        <Caption style={styles.caption}>@j_doe</Caption>
+                        {/* <Caption style={styles.caption}>@j_doe</Caption> */}
                     </View>
                 </View>
             </View>
@@ -101,13 +100,13 @@ const ProfileScreen = ({ navigation }) => {
                 <View style={styles.row}>
                     <Icon name="phone" color="#777777" size={20} />
                     <Text style={{ color: "#777777", marginLeft: 20 }}>
-                        {phoneNumber}
+                        0777111333
                     </Text>
                 </View>
                 <View style={styles.row}>
                     <Icon name="email" color="#777777" size={20} />
                     <Text style={{ color: "#777777", marginLeft: 20 }}>
-                        {email}
+                        email@example.com
                     </Text>
                 </View>
             </View>
@@ -174,11 +173,7 @@ const ProfileScreen = ({ navigation }) => {
                 </TouchableRipple>
                 <TouchableRipple onPress={handleSignOut}>
                     <View style={styles.menuItem}>
-                        <Icons
-                            name="settings-outline"
-                            color="#37B24D"
-                            size={25}
-                        />
+                        <Entypo name="log-out" size={25} color="#37B24D" />
                         <Text style={styles.menuItemText}>Logout</Text>
                     </View>
                 </TouchableRipple>

@@ -17,6 +17,8 @@ import Fontisto from "react-native-vector-icons/Fontisto";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import StarRating from "../components/StarRating";
 
+import { markers } from "../model/mapData";
+
 const HomeScreen = ({ navigation }) => {
     const theme = useTheme();
 
@@ -34,21 +36,21 @@ const HomeScreen = ({ navigation }) => {
                 >
                     <View style={styles.slide}>
                         <Image
-                            source={require("../assets/recycle/download.png")}
+                            source={require("../assets/recycle/recycle-image1.jpg")}
                             resizeMode="cover"
                             style={styles.sliderImage}
                         />
                     </View>
                     <View style={styles.slide}>
                         <Image
-                            source={require("../assets/recycle/nareeta-martin-FoG7PKNYjpM-unsplash.jpg")}
+                            source={require("../assets/recycle/recycle-image2.jpg")}
                             resizeMode="cover"
                             style={styles.sliderImage}
                         />
                     </View>
                     <View style={styles.slide}>
                         <Image
-                            source={require("../assets/recycle/commercial-plastic-recycling.jpeg")}
+                            source={require("../assets/recycle/recycle-image4.jpeg")}
                             resizeMode="cover"
                             style={styles.sliderImage}
                         />
@@ -91,7 +93,7 @@ const HomeScreen = ({ navigation }) => {
                     </View>
                     <Text style={styles.categoryBtnTxt}>Fastfood Center</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
+                <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
                     <View style={styles.categoryIcon}>
                         <MaterialCommunityIcons
                             name="food"
@@ -103,13 +105,13 @@ const HomeScreen = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
             <View style={[styles.categoryContainer, { marginTop: 10 }]}>
-                <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
+                <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
                     <View style={styles.categoryIcon}>
                         <Fontisto name="hotel" size={35} color="#37B24D" />
                     </View>
                     <Text style={styles.categoryBtnTxt}>Hotels</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
+                <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
                     <View style={styles.categoryIcon}>
                         <Ionicons
                             name="md-restaurant"
@@ -119,7 +121,7 @@ const HomeScreen = ({ navigation }) => {
                     </View>
                     <Text style={styles.categoryBtnTxt}>Dineouts</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
+                <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
                     <View style={styles.categoryIcon}>
                         <MaterialIcons
                             name="expand-more"
@@ -145,48 +147,48 @@ const HomeScreen = ({ navigation }) => {
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={require("../assets/recycle/download.png")}
+                            source={markers[1].image}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />
                     </View>
                     <View style={styles.cardInfo}>
-                        <Text style={styles.cardTitle}>Amazing Food Place</Text>
-                        <StarRating ratings={4} reviews={99} />
+                        <Text style={styles.cardTitle}>{markers[1].title}</Text>
+                        <StarRating ratings={markers[1].rating} reviews={markers[1].reviews} />
                         <Text style={styles.cardDetails}>
-                            Amazing description for this amazing place
+                            {markers[1].items}
                         </Text>
                     </View>
                 </View>
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={require("../assets/recycle/nareeta-martin-FoG7PKNYjpM-unsplash.jpg")}
+                            source={markers[2].image}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />
                     </View>
                     <View style={styles.cardInfo}>
-                        <Text style={styles.cardTitle}>Amazing Food Place</Text>
-                        <StarRating ratings={4} reviews={99} />
+                        <Text style={styles.cardTitle}>{markers[2].title}</Text>
+                        <StarRating ratings={markers[2].rating} reviews={markers[2].reviews} />
                         <Text style={styles.cardDetails}>
-                            Amazing description for this amazing place
+                            {markers[2].items}
                         </Text>
                     </View>
                 </View>
                 <View style={styles.card}>
                     <View style={styles.cardImgWrapper}>
                         <Image
-                            source={require("../assets/recycle/commercial-plastic-recycling.jpeg")}
+                            source={markers[3].image}
                             resizeMode="cover"
                             style={styles.cardImg}
                         />
                     </View>
                     <View style={styles.cardInfo}>
-                        <Text style={styles.cardTitle}>Amazing Food Place</Text>
-                        <StarRating ratings={4} reviews={99} />
+                        <Text style={styles.cardTitle}>{markers[3].title}</Text>
+                        <StarRating ratings={markers[3].rating} reviews={markers[3].reviews} />
                         <Text style={styles.cardDetails}>
-                            Amazing description for this amazing place
+                            {markers[3].items}
                         </Text>
                     </View>
                 </View>

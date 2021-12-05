@@ -43,12 +43,12 @@ export function DrawerContent(props) {
                                 }}
                             >
                                 <Title style={styles.title}>John Doe</Title>
-                                <Caption style={styles.caption}>@j_doe</Caption>
+                                {/* <Caption style={styles.caption}>@j_doe</Caption> */}
                             </View>
                         </View>
 
                         <View style={styles.row}>
-                            <View style={styles.section}>
+                            {/* <View style={styles.section}>
                                 <Paragraph
                                     style={[styles.paragraph, styles.caption]}
                                 >
@@ -57,8 +57,8 @@ export function DrawerContent(props) {
                                 <Caption style={styles.caption}>
                                     Following
                                 </Caption>
-                            </View>
-                            <View style={styles.section}>
+                            </View> */}
+                            {/* <View style={styles.section}>
                                 <Paragraph
                                     style={[styles.paragraph, styles.caption]}
                                 >
@@ -67,7 +67,7 @@ export function DrawerContent(props) {
                                 <Caption style={styles.caption}>
                                     Followers
                                 </Caption>
-                            </View>
+                            </View> */}
                         </View>
                     </View>
 
@@ -98,7 +98,7 @@ export function DrawerContent(props) {
                                 props.navigation.navigate("Profile");
                             }}
                         />
-                        <DrawerItem
+                        {/* <DrawerItem
                             icon={({ color, size }) => (
                                 <Icon
                                     name="bookmark-outline"
@@ -110,7 +110,7 @@ export function DrawerContent(props) {
                             onPress={() => {
                                 props.navigation.navigate("BookmarkScreen");
                             }}
-                        />
+                        /> */}
                         <DrawerItem
                             icon={({ color, size }) => (
                                 <Icons
@@ -208,8 +208,10 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
     },
     preference: {
+        flex: 1,
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "flex-start",
         paddingVertical: 12,
         paddingHorizontal: 16,
     },

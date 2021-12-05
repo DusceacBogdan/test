@@ -160,7 +160,7 @@ const EditProfileScreen = () => {
                             fontWeight: "bold",
                         }}
                     >
-                        John Doe
+                        Firstname Lastname
                     </Text>
                 </View>
 
