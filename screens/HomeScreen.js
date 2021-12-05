@@ -43,7 +43,7 @@ const HomeScreen = ({ navigation }) => {
                     </View>
                     <View style={styles.slide}>
                         <Image
-                            source={require("../assets/recycle/recycle-image2.jpg")}
+                            source={require("../assets/recycle/recycle-image4.jpg")}
                             resizeMode="cover"
                             style={styles.sliderImage}
                         />
@@ -68,13 +68,14 @@ const HomeScreen = ({ navigation }) => {
                     }
                 >
                     <View style={styles.categoryIcon}>
-                        <Ionicons
-                            name="ios-restaurant"
-                            size={35}
+                        <MaterialCommunityIcons
+                            style={styles.chipsIcon}
+                            name="bottle-wine"
+                            size={40}
                             color="#37B24D"
                         />
                     </View>
-                    <Text style={styles.categoryBtnTxt}>Restaurant</Text>
+                    <Text style={styles.categoryBtnTxt}>Glass</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.categoryBtn}
@@ -85,43 +86,48 @@ const HomeScreen = ({ navigation }) => {
                     }
                 >
                     <View style={styles.categoryIcon}>
-                        <MaterialCommunityIcons
-                            name="food-fork-drink"
-                            size={35}
+                        <Ionicons
+                            name="newspaper-sharp"
+                            style={styles.chipsIcon}
+                            size={30}
                             color="#37B24D"
                         />
                     </View>
-                    <Text style={styles.categoryBtnTxt}>Fastfood Center</Text>
+                    <Text style={styles.categoryBtnTxt}>Paper</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
+                <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
                     <View style={styles.categoryIcon}>
-                        <MaterialCommunityIcons
-                            name="food"
+                        <MaterialIcons
+                            name="electrical-services"
                             size={35}
                             color="#37B24D"
                         />
                     </View>
-                    <Text style={styles.categoryBtnTxt}>Snacks Corner</Text>
+                    <Text style={styles.categoryBtnTxt}>Electronics</Text>
                 </TouchableOpacity>
             </View>
             <View style={[styles.categoryContainer, { marginTop: 10 }]}>
-                <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
+                <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
                     <View style={styles.categoryIcon}>
-                        <Fontisto name="hotel" size={35} color="#37B24D" />
-                    </View>
-                    <Text style={styles.categoryBtnTxt}>Hotels</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
-                    <View style={styles.categoryIcon}>
-                        <Ionicons
-                            name="md-restaurant"
+                        <MaterialCommunityIcons
+                            name="trash-can"
                             size={35}
                             color="#37B24D"
                         />
                     </View>
-                    <Text style={styles.categoryBtnTxt}>Dineouts</Text>
+                    <Text style={styles.categoryBtnTxt}>Metal</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.categoryBtn} onPress={() => { }}>
+                <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
+                    <View style={styles.categoryIcon}>
+                        <Ionicons
+                            name="heart-sharp"
+                            size={35}
+                            color="#37B24D"
+                        />
+                    </View>
+                    <Text style={styles.categoryBtnTxt}>Favorites</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.categoryBtn} onPress={() => {}}>
                     <View style={styles.categoryIcon}>
                         <MaterialIcons
                             name="expand-more"
@@ -154,7 +160,10 @@ const HomeScreen = ({ navigation }) => {
                     </View>
                     <View style={styles.cardInfo}>
                         <Text style={styles.cardTitle}>{markers[1].title}</Text>
-                        <StarRating ratings={markers[1].rating} reviews={markers[1].reviews} />
+                        <StarRating
+                            ratings={markers[1].rating}
+                            reviews={markers[1].reviews}
+                        />
                         <Text style={styles.cardDetails}>
                             {markers[1].items}
                         </Text>
@@ -170,7 +179,10 @@ const HomeScreen = ({ navigation }) => {
                     </View>
                     <View style={styles.cardInfo}>
                         <Text style={styles.cardTitle}>{markers[2].title}</Text>
-                        <StarRating ratings={markers[2].rating} reviews={markers[2].reviews} />
+                        <StarRating
+                            ratings={markers[2].rating}
+                            reviews={markers[2].reviews}
+                        />
                         <Text style={styles.cardDetails}>
                             {markers[2].items}
                         </Text>
@@ -186,7 +198,10 @@ const HomeScreen = ({ navigation }) => {
                     </View>
                     <View style={styles.cardInfo}>
                         <Text style={styles.cardTitle}>{markers[3].title}</Text>
-                        <StarRating ratings={markers[3].rating} reviews={markers[3].reviews} />
+                        <StarRating
+                            ratings={markers[3].rating}
+                            reviews={markers[3].reviews}
+                        />
                         <Text style={styles.cardDetails}>
                             {markers[3].items}
                         </Text>

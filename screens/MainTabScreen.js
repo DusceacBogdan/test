@@ -56,17 +56,6 @@ const MainTabScreen = () => (
             }}
         /> */}
         <Tab.Screen
-            name="Profile"
-            component={ProfileStackScreen}
-            options={{
-                tabBarLabel: "Profile",
-                tabBarColor: "#694fad",
-                tabBarIcon: ({ color }) => (
-                    <Icon name="ios-person" color={color} size={26} />
-                ),
-            }}
-        />
-        <Tab.Screen
             name="Explore"
             component={ExploreScreen}
             options={{
@@ -74,6 +63,17 @@ const MainTabScreen = () => (
                 tabBarColor: "#d02860",
                 tabBarIcon: ({ color }) => (
                     <Icon name="ios-aperture" color={color} size={26} />
+                ),
+            }}
+        />
+        <Tab.Screen
+            name="Profile"
+            component={ProfileStackScreen}
+            options={{
+                tabBarLabel: "Profile",
+                tabBarColor: "#694fad",
+                tabBarIcon: ({ color }) => (
+                    <Icon name="ios-person" color={color} size={26} />
                 ),
             }}
         />
