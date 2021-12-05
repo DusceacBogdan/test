@@ -39,19 +39,15 @@ export function DrawerContent(props) {
                                     flexDirection: "column",
                                 }}
                             >
-<<<<<<< HEAD
-                                <Title style={styles.title}>Firstname LastName</Title>
-=======
                                 <Title style={styles.title}>
                                     FirstName LastName
                                 </Title>
                                 {/* <Caption style={styles.caption}>@j_doe</Caption> */}
->>>>>>> 70b9381578e89e7f74638eacd776b858bc96610f
                             </View>
                         </View>
 
                         {/* <View style={styles.row}> */}
-                            {/* <View style={styles.section}>
+                        {/* <View style={styles.section}>
                                 <Paragraph
                                     style={[styles.paragraph, styles.caption]}
                                 >
@@ -61,7 +57,7 @@ export function DrawerContent(props) {
                                     Following
                                 </Caption>
                             </View> */}
-                            {/* <View style={styles.section}>
+                        {/* <View style={styles.section}>
                                 <Paragraph
                                     style={[styles.paragraph, styles.caption]}
                                 >

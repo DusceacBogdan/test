@@ -40,10 +40,6 @@ const ProfileScreen = ({ navigation }) => {
     const [uuid, setUuid] = useState("");
 
     useEffect(() => {
-<<<<<<< HEAD
-=======
-        console.log("pula");
->>>>>>> 70b9381578e89e7f74638eacd776b858bc96610f
         const getUid = () => {
             setUuid = firebase.auth().currentUser.uid;
         };
