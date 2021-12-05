@@ -70,12 +70,12 @@ const ProfileScreen = ({ navigation }) => {
                             style={[
                                 styles.title,
                                 {
-                                    marginTop: 15,
+                                    marginTop: 35,
                                     marginBottom: 5,
                                 },
                             ]}
                         >
-                            Firstname Lastname
+                            Andrei Pop
                         </Title>
                     </View>
                 </View>
