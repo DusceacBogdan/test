@@ -10,7 +10,7 @@ import {
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icons from "react-native-vector-icons/Ionicons";
-import { Entypo } from '@expo/vector-icons';
+import { Entypo } from "@expo/vector-icons";
 
 import { auth, firebase } from "../firebase";
 
@@ -34,22 +34,24 @@ const ProfileScreen = ({ navigation }) => {
     //     }
     //   };
 
-
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [uuid, setUuid] = useState('')
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [uuid, setUuid] = useState("");
 
     useEffect(() => {
+<<<<<<< HEAD
+=======
+        console.log("pula");
+>>>>>>> 70b9381578e89e7f74638eacd776b858bc96610f
         const getUid = () => {
-            setUuid = firebase.auth().currentUser.uid
-        }
+            setUuid = firebase.auth().currentUser.uid;
+        };
         const readUserData = () => {
-            let user = auth().currentUser
-            return firebase.database().ref("Users").doc
-        }
-
-    }, [])
+            let user = auth().currentUser;
+            return firebase.database().ref("Users").doc;
+        };
+    }, []);
 
     const handleSignOut = () => {
         auth.signOut()
@@ -59,18 +61,13 @@ const ProfileScreen = ({ navigation }) => {
             .catch((error) => alert(error.message));
     };
 
-
-
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.userInfoSection}>
                 <View style={{ flexDirection: "row", marginTop: 15 }}>
                     <Avatar.Image
-                        source={{
-                            uri:
-                                "https://api.adorable.io/avatars/80/abott@adorable.png",
-                        }}
-                        size={80}
+                        source={require("../assets/logo2.png")}
+                        size={100}
                     />
                     <View style={{ marginLeft: 20 }}>
                         <Title
@@ -110,19 +107,19 @@ const ProfileScreen = ({ navigation }) => {
             </View>
 
             <View style={styles.menuWrapper}>
-                <TouchableRipple onPress={() => { }}>
+                <TouchableRipple onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <Icon name="heart-outline" color="#37B24D" size={25} />
                         <Text style={styles.menuItemText}>Your Favorites</Text>
                     </View>
                 </TouchableRipple>
-                <TouchableRipple onPress={() => { }}>
+                <TouchableRipple onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <Icon name="credit-card" color="#37B24D" size={25} />
                         <Text style={styles.menuItemText}>Payment</Text>
                     </View>
                 </TouchableRipple>
-                <TouchableRipple onPress={() => { }}>
+                <TouchableRipple onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <Icon name="share-outline" color="#37B24D" size={25} />
                         <Text style={styles.menuItemText}>
@@ -130,7 +127,7 @@ const ProfileScreen = ({ navigation }) => {
                         </Text>
                     </View>
                 </TouchableRipple>
-                <TouchableRipple onPress={() => { }}>
+                <TouchableRipple onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <Icon
                             name="account-check-outline"
@@ -140,7 +137,7 @@ const ProfileScreen = ({ navigation }) => {
                         <Text style={styles.menuItemText}>Support</Text>
                     </View>
                 </TouchableRipple>
-                <TouchableRipple onPress={() => { }}>
+                <TouchableRipple onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <Icons
                             name="settings-outline"

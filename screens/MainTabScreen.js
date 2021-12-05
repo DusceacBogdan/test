@@ -130,10 +130,7 @@ const HomeStackScreen = ({ navigation }) => {
                                 }}
                             >
                                 <Avatar.Image
-                                    source={{
-                                        uri:
-                                            "https://api.adorable.io/avatars/80/abott@adorable.png",
-                                    }}
+                                    source={require("../assets/logo2.png")}
                                     size={30}
                                 />
                             </TouchableOpacity>
