@@ -102,7 +102,7 @@ const HomeStackScreen = ({ navigation }) => {
                 name="Home"
                 component={HomeScreen}
                 options={{
-                    title: "Trebe nume",
+                    title: "EcoMap",
                     headerLeft: () => (
                         <View style={{ marginLeft: 10 }}>
                             <Icon.Button

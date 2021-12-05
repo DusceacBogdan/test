@@ -11,7 +11,7 @@ import {
     Dimensions,
     Platform,
 } from "react-native";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -34,16 +34,7 @@ const ExploreScreen = () => {
     const initialMapState = {
         markers,
         categories: [
-            {
-                name: "Plastic",
-                icon: (
-                    <MaterialCommunityIcons
-                        style={styles.chipsIcon}
-                        name="food-fork-drink"
-                        size={18}
-                    />
-                ),
-            },
+            
             {
                 name: "Glass",
                 icon: (
@@ -83,6 +74,16 @@ const ExploreScreen = () => {
                         name="trash-can"
                         size={18}
                         color="black"
+                    />
+                ),
+            },
+            {
+                name: "Plastic",
+                icon: (
+                    <MaterialCommunityIcons
+                        style={styles.chipsIcon}
+                        name="food-fork-drink"
+                        size={18}
                     />
                 ),
             },
@@ -176,6 +177,7 @@ const ExploreScreen = () => {
                             },
                         ],
                     };
+
                     return (
                         <MapView.Marker
                             key={index}
@@ -281,7 +283,7 @@ const ExploreScreen = () => {
                             </Text>
                             <View style={styles.button}>
                                 <TouchableOpacity
-                                    onPress={() => {}}
+                                    onPress={() => { }}
                                     style={[
                                         styles.signIn,
                                         {
@@ -298,7 +300,7 @@ const ExploreScreen = () => {
                                             },
                                         ]}
                                     >
-                                        Order Now
+                                        Take me there
                                     </Text>
                                 </TouchableOpacity>
                             </View>

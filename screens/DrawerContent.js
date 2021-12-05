@@ -42,7 +42,7 @@ export function DrawerContent(props) {
                                     flexDirection: "column",
                                 }}
                             >
-                                <Title style={styles.title}>John Doe</Title>
+                                <Title style={styles.title}>Firstname LastName</Title>
                                 {/* <Caption style={styles.caption}>@j_doe</Caption> */}
                             </View>
                         </View>
